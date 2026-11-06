@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
+  <!-- xai: vendored brand mark, filled silhouette.
+       Source: https://unpkg.com/@lobehub/icons-static-svg@latest/icons/xai.svg
+       Licence: mark is a trademark of xAI; LobeHub Icons (MIT).
+       Trimmed to the mark's ink box and scaled into the 20x20 output frame
+       (2 dots per unit); the vendor contours are unchanged.
+       Brand colour is black; tinted grey so it stays visible on a dark terminal.
+       -->
+  <g fill-rule="evenodd" transform="translate(-0.0218 -0.0218) scale(0.835149)">
+<g fill="#8A8F98"><path d="M6.469 8.776L16.512 23h-4.464L2.005 8.776H6.47zm-.004 7.9l2.233 3.164L6.467 23H2l4.465-6.324zM22 2.582V23h-3.659V7.764L22 2.582zM22 1l-9.952 14.095-2.233-3.163L17.533 1H22z"></path></g>
+  </g>
+</svg>

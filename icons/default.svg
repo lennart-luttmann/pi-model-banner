@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
+  <!-- default: vendored brand mark, filled silhouette.
+       Source: https://pi.dev/logo.svg
+       Licence: Pi logo, shipped by the vendor for the Pi project.
+       The vendor contours are unchanged, but unlike the other marks this one is
+       pure rectangles, so the group is scaled to put every rectangle edge on a
+       dot boundary instead of at a random sub-dot offset: the mark's 117.36-unit
+       step maps to exactly 4 output units (8 dots) and the ink box starts on 2.0
+       (dot 4), so the span is 2..18 units = 32 dots. An edge that lands on a dot
+       boundary is fully in or fully out, so the blocks render crisp with no
+       dithering on their edges.
+       -->
+  <g transform="translate(-3.63375 -3.63375) scale(0.034084)">
+<path fill="#F09082" d="M165.29 165.29H517.36V400H400V282.65H165.29Z"/>
+  <path fill="#4D9ABF" d="M165.29 282.65H282.65V400H400V517.36H282.65V634.72H165.29Z"/>
+  <path fill="#F1BE58" d="M517.36 400H634.72V634.72H517.36Z"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+# Dev-only symlinks created by scripts/link-pi-deps.mjs
+node_modules/
+
+# Build scratch space
+*.log
+__pycache__/
+
+# Local secrets
+.env
+.env.*
+
+# Local pack artifacts (`npm pack --pack-destination dist`)
+/dist/

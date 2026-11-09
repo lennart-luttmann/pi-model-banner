@@ -1,7 +1,7 @@
 {
     "name": "pi-model-banner",
     "version": "26.0.0",
-    "description": "Model-specific ANSI startup banner for Pi: Claude, GPT, Gemini, \u2026 each get their own logo, live-updated on model change",
+    "description": "Provides a model specific banner for the pi.dev agent harness, displaying useful information like the model name, provider and thinking level.",
     "keywords": [
         "pi-package",
         "pi-extension",
@@ -31,7 +31,7 @@
     },
     "pi": {
         "extensions": [
-        	"./index.ts"
+            "./index.ts"
         ]
     },
     "scripts": {

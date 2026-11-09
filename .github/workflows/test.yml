@@ -1,0 +1,28 @@
+name: Test
+on:
+    push:
+        branches: [main]
+    pull_request:
+permissions:
+    contents: read
+jobs:
+    test:
+        name: Node ${{ matrix.node }}
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                node: ["22", "24"]
+        steps:
+            - uses: actions/checkout@v5
+            - uses: actions/setup-node@v5
+              with:
+                node-version: ${{ matrix.node }}
+            # The extension only uses the packages Pi provides at runtime; `npm test`
+            # links them from a global Pi install (scripts/link-pi-deps.mjs).
+            - name: Install Pi
+              run: npm install -g @earendil-works/pi-coding-agent
+            - name: Test
+              run: npm test
+            - name: Check the package contents
+              run: npm pack --dry-run

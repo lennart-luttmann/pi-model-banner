@@ -21,9 +21,9 @@ If a vendor has no logo yet, open an issue with the vendor's name and a link to 
 
 You need:
 
-- Node.js 22.19 or newer,
-- Pi installed globally, so `pi` is on your `PATH`,
-- Python 3.
+- Node.js 22.19 or newer
+- Pi installed globally, `pi` needs to be on your `PATH`
+- Python 3
 
 Then clone the repository and run the tests:
 
@@ -43,16 +43,14 @@ pi -e ./index.ts
 
 ## Pull requests
 
-- Keep a pull request to one change, and describe what it fixes or adds.
-- Run `npm test` before you push; it runs the unit tests and checks the art.
-- **Only** add or update tests for behavior you change.
-- Match the style of the surrounding code: 4-space indentation, small functions,
-  a short doc comment on each.
-- Add a line under a new `## [Unreleased]` heading in `CHANGELOG.md` if users will
-  notice the change.
-- Do not edit `content/ansi/*.ansi` by hand; they are generated from `icons/`.
-- You are responsible for your own commits and the code therein, including code written with the help of AI tools.
-- **Do not list AI agents as co-authors** (no `Co-authored-by:` trailers for agents).
+- Keep a pull request to one change and describe what it fixes or adds
+- Run `npm test` before you push
+- **Only** add or update tests for behavior you change
+- Match the style of the surrounding code: 4-space indentation, small functions with a short doc comment on each
+- Add a line under a new `## [Unreleased]` heading in `CHANGELOG.md` if users will notice the change
+- You are responsible for your own commits and the code therein, including code written with the help of AI tools
+- **Do not** list AI agents as co-authors of your commits
+- **Do not** tag a commit or publish to npm. Releasing is a maintainer task, see [Releasing](#releasing)
 
 ## Adding a vendor
 
@@ -62,11 +60,17 @@ A new vendor needs the vendor's own mark, not a redrawn one. Rebuilding the art 
 2. Check the result with `npm run preview:logos` and in Pi, then run `npm test`.
 3. Add a row to the table in `NOTICE.md`, and the license text if the source requires it. Marks from unclear or unlicensed sources cannot be accepted.
 4. Add an entry to the Vendors section of `README.md`.
-5. If you can, add a screenshot as `screenshots/<family>.png`, cropped like the existing ones (895 × 325 pixels, dark theme). Otherwise write **No screenshot available** and one can be added later.
+5. If you can, add a screenshot as `screenshots/<family>.png`, cropped like the existing ones (895 × 325 pixels, dark theme). Otherwise write **No screenshot available** and one can be added later. Please mention missing screenshots in your pull request or commit message.
 
-The project structure and the publishing setup are included in [AGENTS.md](AGENTS.md).
+## Releasing
+
+Releases are cut by maintainers only and are published to npm. Coding agents must not tag, publish or create releases. An agent that is asked to release should stop and hand the work back to the maintainer.
+
+1. Move the entries under `## [Unreleased]` in `CHANGELOG.md` to a new `## [x.y.z] - YYYY-MM-DD` heading, and set `version` in `package.json` to the same version, following the [versioning scheme](README.md#versioning).
+2. Run `npm test` and `npm pack --dry-run`, and check that the package only contains the files listed in `files` in `package.json`.
+3. Push to `main` and wait for the Test workflow to pass.
+4. Run `npm publish`.
 
 ## License
 
-By contributing, you agree that your contribution is licensed under the
-[MIT license](LICENSE.md) of this project.
+By contributing, you agree that your contribution is licensed under the [MIT license](LICENSE.md) of this project.

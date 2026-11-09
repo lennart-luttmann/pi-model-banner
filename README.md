@@ -51,7 +51,7 @@ The default configuration should cover most providers and vendors. If your speci
 
 - `enabled` — set to `false` to keep Pi's own header.
 - `overrides` — pick the logo for a model yourself. Map a model id, or
-- `provider/model`, to a family id from [Vendors](#vendors).
+  `provider/model`, to a family id from [Vendors](#vendors).
 
 Changes apply on the next start or after `/reload`. A mistake in the file never
 stops Pi from starting. The banner warns about it and skips what it cannot use.

@@ -1,8 +1,6 @@
 # pi-model-banner — development notes
 
-Notes for contributors and coding agents. User-facing documentation lives in
-`README.md`, the contribution workflow in `CONTRIBUTING.md`; neither this file nor
-`CONTRIBUTING.md` is published to npm.
+Notes for contributors and coding agents. User-facing documentation lives in `README.md`, the contribution workflow in `CONTRIBUTING.md`; neither this file nor `CONTRIBUTING.md` is published to npm.
 
 ## Layout
 
@@ -79,3 +77,13 @@ also render on npmjs.com, where `screenshots/` is not shipped.
 Versions follow the year-based scheme described in the README. Each release gets a
 `## [x.y.z] - YYYY-MM-DD` entry in `CHANGELOG.md`; Pi matches these headings against
 `version` in `package.json` to show update notes.
+
+## Releases
+
+Releases are published to npm only. Only a maintainer cuts a release, and agents
+never do: no `git tag`, no `npm publish`. The steps are in
+[CONTRIBUTING.md](CONTRIBUTING.md#releasing).
+
+`.github/workflows/test.yml` runs the tests on every push to `main` and every pull
+request. Git installs (`pi install git:...`) read the repository directly, so
+`main` should only ever hold release-ready code.
